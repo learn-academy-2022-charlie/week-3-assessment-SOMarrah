@@ -63,25 +63,40 @@
           // No need to change anything ABOVE this line ^
 
           return(
-            <h1>Draw a Card</h1>
-            <button onClick={}>
+          //there was no start <div> since there are multiple returns they need to be contained in something, like a fragement or div
+          <div>
+            <h1>
+              Draw a Card
+            </h1>
+            //this.drawCard was needed here
+            <button
+            onClick={this.drawCard}
+            >
               Click to Draw a Card
             </button>
-            <button onClick={shuffle}>
+            //shuffle need this.
+            <button
+            onClick={this.shuffle}
+            >
               Return Cards and Shuffle Deck
             </button>
-            <div style={handStyles}>
+            <div
+            style={handStyles}
+            >
               {this.state.hand.map((card, index) => {
                 return (
-                  <div style={cardStyles} key={index}>
-                    {card}
+                  <div
+                    style={cardStyles} key={index}>
+                      {card}
                   </div>
                 )
               })}
+              </div>
             </div>
-          )
-        }
-      }
+    )
+  }
+}
+
 
       // No need to change anything below this line
       const domContainer = document.querySelector('#react-container')
